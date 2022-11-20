@@ -41,6 +41,12 @@ const userSchema = new mongoose.Schema({
     required: true,
     default: true,
   },
+  jobs: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "jobs",
+    },
+  ],
 });
 
 // Hashing Password
