@@ -69,7 +69,7 @@ const registerController = async (req, res) => {
     user.password = await user.generateHash(password);
     await user.save();
 
-    return res.status(200).json({
+    return res.header("isLoggedIn", true).status(200).json({
       success: true,
       message: "Registration is successful",
     });
